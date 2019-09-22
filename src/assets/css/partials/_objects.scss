@@ -1,0 +1,18 @@
+.o-logo {
+    height: 50px;
+    width: 60px;
+    text-indent: -999em;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('../logo.png');
+}
+
+.o-play {
+    .play-icon {
+        display: none;
+        &.visible {
+            display: block;
+        }
+    }
+}

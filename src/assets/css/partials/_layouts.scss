@@ -1,0 +1,182 @@
+body {
+    background-color: $c-white;
+    font-family: $f-text;
+    color: $c-text;
+}
+
+// Genericas
+.l-wrap {
+    @include clearfix;
+    @include container();
+    padding-left: 8px;
+    padding-right: 8px;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+        @include container();
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    @include susy-breakpoint($breakpoint-md, $container-md) {
+        @include container();
+    }
+    @include susy-breakpoint($breakpoint-lg, $container-lg) {
+        @include container();
+    }
+    &.l-wrap--flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &.l-wrap--flex-middle {
+            align-items: center;
+        }
+        &.l-wrap--flex-start {
+            justify-content: flex-start;
+        }
+        &:after {
+            content: none;
+        }
+    }
+}
+
+.l-main-sidebar {
+    min-height: 100vh;
+    display: flex;
+    .c-sidebar {
+        width: 200px;
+        padding: 25px 8px;
+        min-height: 100vh;
+    }
+    .l-main-content {
+        padding: 60px 0 130px 0;
+        margin-left: auto;
+        position: relative;
+        width: calc(100% - 200px);
+    }
+}
+
+.l-user-bar {
+    height: 50px;
+    display: flex;
+    padding: 0 13px;
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: 100%;
+    right: 0;
+    z-index: 100;
+    background: $c-white;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.l-sidebar {
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    .o-logo {
+        margin: 0 auto 50px auto;
+    }
+}
+
+.l-user-top-block {
+    .c-user-top-block__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        img {
+            width: 30px;
+            height: 30px;
+            border-radius: 100%;
+        }
+    }
+}
+
+.l-song {
+    .c-song__thumb {
+        width: 100%;
+        height: 240px;
+        display: block;
+        background-color: #e6e6e6;
+    }
+    .c-song__thumb {
+        margin-bottom: 8px;
+    }
+    .l-song__descriptions {
+        .c-song__name {
+            margin-bottom: 7px;
+        }
+    }
+}
+
+.l-masonry-songs {
+    margin-right: -20px;
+    .l-song {
+        width: 23%;
+        margin-right: 20px;
+        margin-bottom: 13px;
+        &:nth-of-type(3n+1) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 500px;
+            }
+        }
+        &:nth-of-type(3n+2) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 270px;
+            }
+        }
+        &:nth-of-type(3n+3) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 240px;
+            }
+        }
+        &:nth-of-type(4n+4) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 300px;
+            }
+        }
+        &:nth-of-type(5n+5) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 350px;
+            }
+        }
+        &:nth-of-type(6n+6) {
+            width: calc(100%/3 - 20px);
+            .c-song__thumb {
+                height: 240px;
+            }
+        }
+        .c-song__thumb {
+            width: 100%;
+        }
+    }
+}
+
+.l-channel {
+    margin-bottom: 90px;
+    .l-channel__top {
+        margin-bottom: 15px;
+        .c-channel__name {
+          margin-bottom: 5px;
+        }
+    }
+}
+
+.l-song-blocks {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -20px;
+    justify-content: space-between;
+    .l-song {
+        width: 24%;
+        margin-bottom: 20px;
+    }
+}
+
+.l-content {
+    padding: 25px;
+}

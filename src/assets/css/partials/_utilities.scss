@@ -1,0 +1,25 @@
+.u-bg-cover {
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.u-color-1 {
+	color: $c-1;
+}
+
+.u-bg-1 {
+	background-color: $c-1;
+}
+
+.u-sm-pdd {
+	padding: 20px 0;
+}
+
+.icon-bookmark {
+	transition: all .1s ease;
+	color: #E9E9E9;
+	&:hover {
+		color: $c-1;
+	}
+}

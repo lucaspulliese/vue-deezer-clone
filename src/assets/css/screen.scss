@@ -1,0 +1,31 @@
+// (*) imports required
+
+// Import base*
+@import "_base";
+
+// Import reset* (http://html5doctor.com/html-5-reset-stylesheet)
+@import "_reset";
+
+// Import variables*
+@import "partials/_variables";
+
+// Import barlow
+@import url('https://fonts.googleapis.com/css?family=Barlow:400,400i,700,700i');
+
+// icons
+@import "fonts/icons/_icons";
+
+// Import layouts styles
+@import "partials/_mixins";
+
+// Import layouts styles
+@import "partials/_layouts";
+
+// Import objects styles
+@import "partials/_objects";
+
+// Import components styles
+@import "partials/_components";
+
+// Import utilities styles
+@import "partials/_utilities";

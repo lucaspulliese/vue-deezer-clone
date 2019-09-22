@@ -1,4 +1,4 @@
-# hello-world
+Deezer clone made with Vue, Vuex and Axios
 
 ## Project setup
 ```

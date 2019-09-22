@@ -1,0 +1,58 @@
+// Include box-sizing: border-box
+@include border-box-sizing;
+
+//////////////////////////////////////////////////////////
+
+// Variables propias
+
+// 1 - Structure
+
+// Default mobile
+$susy: (
+    //column-width: 82.2px,
+    column-width: 78px,
+    columns: 4,
+    gutters: .25,
+    global-box-sizing: border-box,
+);
+
+// Tablet portrait
+$container-sm: (
+    columns: 8,
+);
+
+// Tablet landscape
+$container-md: (
+    columns: 10,
+);
+
+// Desktop
+$container-lg: (
+    columns: 12,
+);
+
+// Breakpoints
+$breakpoint-sm: 765px;
+$breakpoint-md: 1012px;
+$breakpoint-lg: 1202px;
+
+//////////////////////////////////////////////////////////
+
+// 2 - Colors
+$c-white: #fff;
+$c-black: #32323d;
+
+$c-bg: #F6F6F9;
+$c-border: #D5D5E5;
+
+$c-1: #433e69; // Violeta
+
+$c-text: #32323d; // Gris
+$c-text-alt: #000;
+
+//////////////////////////////////////////////////////////
+
+// 3 - Fonts
+$f-text: 'Barlow', sans-serif; // Textos primarios
+$f-titles: 'Basier Square', sans-serif; // Titulos
+$f-text-alt: 'Akrobat', sans-serif; // Textos secundarios
