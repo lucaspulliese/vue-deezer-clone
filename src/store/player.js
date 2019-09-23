@@ -75,7 +75,7 @@ const actions = {
     commit(AUDIO_STOP);
     store.dispatch('playNext');
   },
-  audioError({ commit, state }) {
+  audioError({ state }) {
     store.dispatch('setTrackError', state.activeTrack);
     /*
     eventBus.$emit(
@@ -95,10 +95,10 @@ const actions = {
     commit(TOGGLE_VOLUME);
     commit(SET_VOLUME, newVolume);
   },
-  seek({ commit, state }, progress) {
+  seek({}, progress) {
     playService.seek(progress);
   },
-  toggleRepeatMode({ commit, state }, payload) {
+  toggleRepeatMode({ commit }, payload) {
     commit(TOGGLE_REPEAT_MODE, Boolean(payload));
   },
   toggleShuffleMode({ commit }, payload) {
@@ -118,12 +118,12 @@ const actions = {
     if (playService.destroy) {
       playService.destroy();
     }
-    playService = playerType === 'deezer' ? player : deezer;
+    //playService = playerType === 'deezer' ? player : deezer;
     commit(SET_AUDIO_READY_STATE, true);
   },
-  setAudioReadyState(value) {
-    commit(SET_AUDIO_READY_STATE, value);
-  }
+  //setAudioReadyState(value) {
+    //commit(SET_AUDIO_READY_STATE, value);
+  //}
 };
 
 const mutations = {

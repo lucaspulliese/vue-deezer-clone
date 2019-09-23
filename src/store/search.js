@@ -22,7 +22,7 @@ const getters = {
 };
 
 const actions = {
-  startSearch({ commit, state }, query) {
+  startSearch({ commit }, query) {
     commit(START_SEARCH);
     search(query).then(res => {
       commit(SEARCH_RESULTS, res);
