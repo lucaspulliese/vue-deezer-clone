@@ -41,15 +41,25 @@ body {
     min-height: 100vh;
     display: flex;
     .c-sidebar {
-        width: 200px;
+        width: 230px;
         padding: 25px 8px;
         min-height: 100vh;
+        position: fixed;
+        left: -230px;
+        @include susy-breakpoint($breakpoint-sm, $container-sm) {
+            width: 200px;
+            left: 0;
+        }
     }
     .l-main-content {
-        padding: 60px 0 130px 0;
         margin-left: auto;
+        width: 100%;
         position: relative;
-        width: calc(100% - 200px);
+        padding: 50px 0 16px 0;
+        @include susy-breakpoint($breakpoint-sm, $container-sm) {
+            width: calc(100% - 200px);
+            padding: 60px 0 130px 0;
+        }
     }
 }
 
@@ -59,13 +69,16 @@ body {
     padding: 0 13px;
     position: fixed;
     top: 0;
-    left: 200px;
+    left: 0;
     width: 100%;
     right: 0;
     z-index: 100;
     background: $c-white;
     align-items: center;
     justify-content: space-between;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+        left: 200px;
+    }
 }
 
 .l-sidebar {
@@ -112,40 +125,55 @@ body {
     margin-right: -20px;
     .l-song {
         width: 23%;
-        margin-right: 20px;
-        margin-bottom: 13px;
-        &:nth-of-type(3n+1) {
+        margin-right: 10px;
+        margin-bottom: 0px;
+        width: calc(100%/2 - 10px);
+        @include susy-breakpoint($breakpoint-sm, $container-sm) {
             width: calc(100%/3 - 20px);
+            margin-bottom: 13px;
+            margin-right: 20px;
+        }
+        &:nth-of-type(3n+1) {
             .c-song__thumb {
-                height: 500px;
+                height: 240px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                    height: 500px;
+                }
             }
         }
         &:nth-of-type(3n+2) {
-            width: calc(100%/3 - 20px);
             .c-song__thumb {
-                height: 270px;
+                height: 170px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                    height: 270px;
+                }
             }
         }
         &:nth-of-type(3n+3) {
-            width: calc(100%/3 - 20px);
             .c-song__thumb {
-                height: 240px;
+                height: 210px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                    height: 240px;
+                }
             }
         }
         &:nth-of-type(4n+4) {
-            width: calc(100%/3 - 20px);
             .c-song__thumb {
-                height: 300px;
+                height: 190px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                    height: 300px;
+                }
             }
         }
         &:nth-of-type(5n+5) {
-            width: calc(100%/3 - 20px);
             .c-song__thumb {
-                height: 350px;
+                height: 310px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                    height: 350px;
+                }
             }
         }
         &:nth-of-type(6n+6) {
-            width: calc(100%/3 - 20px);
             .c-song__thumb {
                 height: 240px;
             }
@@ -157,6 +185,8 @@ body {
 }
 
 .l-channel {
+    width: 100%;
+    overflow: hidden;
     margin-bottom: 90px;
     .l-channel__top {
         margin-bottom: 15px;
@@ -166,16 +196,22 @@ body {
     }
 }
 
+.swiper-container {
+    width: 100%;
+}
+
 .l-song-blocks {
-    display: flex;
-    flex-wrap: wrap;
     margin-bottom: -20px;
-    justify-content: space-between;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    }
     .l-song {
-        width: 24%;
         margin-bottom: 20px;
+        @include susy-breakpoint($breakpoint-sm, $container-sm) {
+            
+        }
     }
 }
+
 
 .l-content {
     padding: 25px;
