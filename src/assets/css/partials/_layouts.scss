@@ -1,7 +1,21 @@
 body {
     background-color: $c-white;
     font-family: $f-text;
-    color: $c-text;
+    color: $c-black;
+    &.body--alt {
+      color: $c-white;
+      background: rgb(2,0,36);
+      background: linear-gradient(122deg, rgba(2,0,36,1) 0%, rgba(0,0,0,1) 0%, rgba(5,0,38,1) 100%);  
+      .c-sidebar {
+        background: rgba(0,0,0, 0.8);
+      }
+      .c-player-bottom {
+        background: $c-black;
+      }
+      .c-user-bar {
+        background-color: $c-black;
+      }
+    }
 }
 
 // Genericas
@@ -55,7 +69,7 @@ body {
         margin-left: auto;
         width: 100%;
         position: relative;
-        padding: 50px 0 16px 0;
+        padding: 50px 0 110px 0;
         @include susy-breakpoint($breakpoint-sm, $container-sm) {
             width: calc(100% - 200px);
             padding: 60px 0 130px 0;
@@ -187,7 +201,10 @@ body {
 .l-channel {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 90px;
+    margin-bottom: 50px;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      margin-bottom: 90px;
+    }
     .l-channel__top {
         margin-bottom: 15px;
         .c-channel__name {
@@ -214,5 +231,8 @@ body {
 
 
 .l-content {
-    padding: 25px;
+    padding: 15px;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      padding: 25px;
+    }
 }

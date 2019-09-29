@@ -189,7 +189,7 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    height: 80px;
+    height: 60px;
     display: flex;
     align-items: center;
     padding: 0 25px;
@@ -198,13 +198,28 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      height: 80px;
+    }
     .c-player-controls {
         .c-player-controls__list {
             display: flex;
             align-items: center;
+            .c-el-play {
+              display: block;
+            }
+            li {
+              display: none;
+              @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                display: inline-block;
+              }
+            }
             .btn-play {
-                margin: 0 15px;
-                font-size: 32px;
+                margin: 0 10px 0px 0;
+                font-size: 25px;
+                @include susy-breakpoint($breakpoint-sm, $container-sm) {
+                  font-size: 32px;
+                }
                 &.inactive {
                     opacity: 0.3;
                 }
@@ -223,6 +238,10 @@
 }
 
 .c-volume-slider {
+    display: none;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      display: block;
+    }
     .c-volume-slider__actions {
         display: flex;
         align-items: center;
@@ -335,7 +354,11 @@
 
 .c-player-track {
    flex: 1;
-   padding: 0 140px 0 70px;
+   width: calc(100% - 58px);
+   @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    padding: 0 140px 0 70px;
+    width: 100%;;
+   }
    .c-player-track__top {
       display: flex;
       align-items: center;
@@ -346,6 +369,17 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     max-width: 800px;
+    font-size: 14px;
+    padding-right: 10px;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      font-size: 16px;
+    }
+  }
+  .c-player-track__actions {
+    margin-left: auto;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      margin: 0;
+    }
   }
 }
 
@@ -394,39 +428,63 @@
   color: $c-white;
   background-color: $c-1;
   border-radius: 3px;
-  padding: 8px 14px;
-  font-size: 14px;
+  padding: 7px 13px;
+  font-size: 12px;
+  @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    font-size: 14px;
+    padding: 8px 14px;
+  }
 }
   
 .c-artist-intro {
-  margin-top: 20px;
-  margin-bottom: 40px;
+  margin-top: 12px;
+  margin-bottom: 27px;
   display: flex;
   align-items: center;
+  @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    margin-top: 20px;
+    margin-bottom: 40px;
+  }
   .c-artist__avatar {
-    width: 250px;
-    height: 250px;
+    width: 140px;
+    height: 140px;
     margin-right: 23px;
     background-color: gray;
     border-radius: 100%;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      width: 190px;
+      height: 190px;
+    }
+    @include susy-breakpoint($breakpoint-md, $container-md) {
+      width: 250px;
+      height: 250px;
+    }
   }
   .c-artist__actions {
     .c-artist__name {
       display: block;
-      font-size: 38px;
+      font-size: 24px;
       margin-bottom: 12px;
+      @include susy-breakpoint($breakpoint-sm, $container-sm) {
+        font-size: 32px;
+      }
+      @include susy-breakpoint($breakpoint-md, $container-md) {
+        font-size: 38px;
+      }
     }
   }
 }
 
 .c-song-list {
-  width: 70%;
-  margin: 0 25px;
+  width: 100%;
   border-radius: 4px;
   box-shadow: 0 0 6px rgba(25,25,34,.16);
+  @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    width: 70%;
+  }
   padding: 18px;
   .c-song-item {
     padding: 13px;
@@ -474,6 +532,7 @@
   }
   .c-song__data {
     display: flex;
+    width: calc(100% - 50px);
     align-items: center;
     .c-song__number {
       font-size: 16px;

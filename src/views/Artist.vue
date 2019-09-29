@@ -8,11 +8,10 @@
         :name="name"
         ></ArtistIntro>
 
+      <SongList
+        :urlTracklist="urlTracklist"
+        ></SongList>
     </div>
-
-    <SongList
-      :urlTracklist="urlTracklist"
-      ></SongList>
 
   </WithSidebar>
 </template>

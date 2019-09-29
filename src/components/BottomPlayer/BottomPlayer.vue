@@ -5,7 +5,7 @@
           <li>
             <button class="btn-to-start"><i class="icon-to-start"></i></button>
           </li>
-          <li>
+          <li class="c-el-play">
             <button class="btn-play" @click="play"><i v-bind:class="[isPlaying ? 'icon-pause' : 'icon-play']"></i></button>
           </li>
           <li>

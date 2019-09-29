@@ -15,8 +15,9 @@
               <Playlist v-bind:id="id"></Playlist>
             </swiper-slide>
                 
-            <div class="swiper-pagination"  slot="pagination"></div>
           </swiper>
+          
+          <div class="swiper-pagination"  slot="pagination"></div>
         </div>
       </Channel>
 
@@ -58,15 +59,19 @@ export default {
         // Responsive breakpoints
         breakpoints: {
           // when window width is >= 320px
-          320: {
+          480: {
             slidesPerView: 1,
             spaceBetween: 20
           },
           // when window width is >= 640px
           730: {
-            slidesPerView: 1,
+            slidesPerView: 2,
             spaceBetween: 40
-          }
+          },
+          920: {
+            slidesPerView: 3,
+            spaceBetween: 40
+          },
         },
         pagination: {
           el: '.swiper-pagination',
