@@ -16,8 +16,7 @@
             </swiper-slide>
                 
           </swiper>
-          
-          <div class="swiper-pagination"  slot="pagination"></div>
+        
         </div>
       </Channel>
 
@@ -51,22 +50,23 @@ export default {
   name: 'home',
   data: function() {
     return {
-      idArtists: [1445, 2707, 1194, 927, 181, 207, 906, 1190, 808, 3337, 997, 10696, 1883, 73921, 64410, 2468, 449941],
-      idFavourites: [1, 2179, 1129, 3128],
+      idArtists: [1, 2707, 1194, 927, 181, 207, 906, 1190, 808, 3337, 997, 10696, 1883, 73921, 64410, 2468, 449941],
+      idFavourites: [1445, 2179, 1129, 3128],
       swiperOption: {
         slidesPerView: 4,
         spaceBetween: 10,
+        freeMode: true,
         // Responsive breakpoints
         breakpoints: {
           // when window width is >= 320px
           480: {
-            slidesPerView: 1,
-            spaceBetween: 20
+            spaceBetween: 20,
+            slidesPerView: 1.3,
           },
           // when window width is >= 640px
           730: {
             slidesPerView: 2,
-            spaceBetween: 40
+            spaceBetween: 30
           },
           920: {
             slidesPerView: 3,

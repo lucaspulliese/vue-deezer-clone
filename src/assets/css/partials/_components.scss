@@ -58,7 +58,18 @@
 }
 
 .c-user-bar {
-    box-shadow: -12px 18px 7px -18px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 1px 7px 0px rgba(0, 0, 0, 0.1);
+    .c-search {
+      display: none;
+      @include susy-breakpoint($breakpoint-sm, $container-sm) {
+        display: block;
+      }
+    }
+    .c-btn-hamburger {
+      @include susy-breakpoint($breakpoint-sm, $container-sm) {
+        display: none;
+      }
+    }
 }
 
 .c-search-block {
@@ -219,6 +230,7 @@
                 font-size: 25px;
                 @include susy-breakpoint($breakpoint-sm, $container-sm) {
                   font-size: 32px;
+                  margin: 0 10px 0px 10px;
                 }
                 &.inactive {
                     opacity: 0.3;
@@ -478,17 +490,64 @@
   }
 }
 
+.c-btn-hamburger {
+  position: relative;
+  display: block;
+  width: 40px;
+  height: 55px;
+  z-index: 3;
+  &:before,
+  &:after,
+  span {
+      background-color: $c-black;
+      content: '';
+      display: block;
+      width: 20px;
+      height: 2px;
+      top: 50%;
+      left: 50%;
+      margin-left: -10px;
+      margin-top: -1px;
+      position: absolute;
+      transition: none .3s ease .3s;
+      transition-property: transform, top, bottom, right, opacity;
+  }
+  &:before {
+      transform: translateY(-6px);
+  }
+  span {
+  }
+  &:after {
+      transform: translateY(6px);
+  }
+  &.active {
+      &:before {
+          transform: rotate(45deg);
+      }
+      &:after {
+          transform: rotate(-45deg);
+      }
+      span {
+          opacity: 0;
+      }
+  }
+}
+
 .c-song-list {
   width: 100%;
   border-radius: 4px;
+  padding: 10px;
   box-shadow: 0 0 6px rgba(25,25,34,.16);
   @include susy-breakpoint($breakpoint-sm, $container-sm) {
     width: 70%;
+    padding: 18px;
   }
-  padding: 18px;
   .c-song-item {
-    padding: 13px;
+    padding: 9px;
     border-bottom: 1px solid #e2e2e2;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      padding: 13px;
+    }
     &:last-of-type {
       border-bottom: none;
       padding-bottom: 0;
@@ -500,11 +559,14 @@
 .c-loading {
   top: 0;
   bottom: 80px;
-  left: 200px;
+  left: 0;
   right: 0;
   background-color: $c-white;
   z-index: 100;
   position: fixed;
+  @include susy-breakpoint($breakpoint-sm, $container-sm) {
+    left: 200px;
+  }
 }
 
 .c-loading-block {
@@ -542,13 +604,18 @@
     }
   }
   .c-song__title {
-    font-size: 16px;
+    font-size: 14px;
     overflow: hidden;
     white-space: nowrap;
     max-width: 700px;
+    flex: 1;
+    padding: 2px 0;
     text-overflow: ellipsis;
     font-weight: 400;
     display: inline-block;
+    @include susy-breakpoint($breakpoint-sm, $container-sm) {
+      font-size: 16px;
+    }
   }
   .o-play {
     border-radius: 999px;

@@ -69,7 +69,7 @@ body {
         margin-left: auto;
         width: 100%;
         position: relative;
-        padding: 50px 0 110px 0;
+        padding: 70px 0 110px 0;
         @include susy-breakpoint($breakpoint-sm, $container-sm) {
             width: calc(100% - 200px);
             padding: 60px 0 130px 0;
@@ -84,7 +84,6 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
     right: 0;
     z-index: 100;
     background: $c-white;
@@ -225,6 +224,12 @@ body {
         margin-bottom: 20px;
         @include susy-breakpoint($breakpoint-sm, $container-sm) {
             
+        }
+    }
+    .c-song {
+        .c-song__thumb {
+            height: auto;
+            padding-top: 100%;
         }
     }
 }

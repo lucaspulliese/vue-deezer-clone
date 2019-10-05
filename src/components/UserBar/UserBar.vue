@@ -1,18 +1,19 @@
 <template>
   <div class="c-user-bar l-user-bar">
-      <form class="c-search" v-on:submit.prevent="triggerSearch">
-        <input type="text" 
-          @focusin="showSearch = true"
-          autocomplete="nonefalse" 
-          placeholder="Search for a song" 
-          v-model="searchText"
-          class="js-input-search"
-          name="search" />
-      </form>
+    <button class="c-btn-hamburger"><span></span></button>
+    <form class="c-search" v-on:submit.prevent="triggerSearch">
+      <input type="text" 
+        @focusin="showSearch = true"
+        autocomplete="nonefalse" 
+        placeholder="Search for a song" 
+        v-model="searchText"
+        class="js-input-search"
+        name="search" />
+    </form>
 
-      <UserProfileBlock></UserProfileBlock>
+    <UserProfileBlock></UserProfileBlock>
 
-      <Search v-click-outside="closeEvent" v-show="showSearchBlock"></Search>
+    <Search v-click-outside="closeEvent" v-show="showSearchBlock"></Search>
   </div>
 </template>
 
